@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WordCounterApp</string>
+    <string name="prompt">Enter a sentence or paragraph</string>
+    <string name="get_count">Get the word count</string>
+</resources>
