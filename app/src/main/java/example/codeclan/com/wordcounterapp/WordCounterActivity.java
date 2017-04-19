@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class WordCounterActivity extends AppCompatActivity {
 
     private EditText promptEditText;
     private Button getCountButton;
+    private TextView myResult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +22,14 @@ public class WordCounterActivity extends AppCompatActivity {
 
         promptEditText = (EditText) findViewById(R.id.prompt_text);
         getCountButton = (Button) findViewById(R.id.word_count_button);
+        myResult = (TextView) findViewById(R.id.answer_text);
     }
 
     public void onWordCountButtonClicked(View button){
         WordCounter words = new WordCounter();
-        String userInput = words.returnWordCount(userInput);
+        String userInput = promptEditText.getText().toString();
+        int totalWordCount = words.returnWordCount(userInput);
+        myResult.setText(totalWordCount + "");
     }
 
 }
